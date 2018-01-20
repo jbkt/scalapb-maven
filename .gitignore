@@ -5,6 +5,7 @@
 ### Maven ###
 target
 pom.xml.bak
+pom.xml.versionsBackup
 
 ### Mac Finder ##
 .DS_Store
