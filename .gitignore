@@ -1,0 +1,10 @@
+### IntelliJ IDEA ###
+*.iml
+.idea
+
+### Maven ###
+target
+pom.xml.bak
+
+### Mac Finder ##
+.DS_Store
