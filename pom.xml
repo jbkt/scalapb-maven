@@ -6,6 +6,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>ScalaPB Maven</name>
+  <description>Maven plugin to compile Protobuf files in Scala using ScalaPB</description>
   <modules>
     <module>scalapb-maven-example</module>
     <module>scalapb-maven-plugin</module>
