@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.catte</groupId>
+    <artifactId>scalapb-maven</artifactId>
+    <version>1.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>scalapb-maven-example-java</artifactId>
+  <packaging>jar</packaging>
+  <name>ScalaPB Maven Plugin Example With Java Compatibility</name>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>net.catte</groupId>
+        <artifactId>scalapb-maven-plugin</artifactId>
+        <version>${project.version}</version>
+        <configuration>
+          <outputDirectory>${project.build.directory}/generated-sources/protobuf-scala</outputDirectory>
+          <javaConversions>true</javaConversions>
+          <javaOutput>true</javaOutput>
+          <javaOutputDirectory>${project.build.directory}/generated-sources/protobuf-java</javaOutputDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <phase>generate-sources</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
