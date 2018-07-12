@@ -104,7 +104,7 @@ public class CompileMojo extends AbstractMojo {
         getLog().info("Reading proto files in '" + protoPath +"'.");
 
         Path[] includeDirectoriesPaths = ArrayUtils.toArray();
-        if(includeDirectories != null) {
+        if (includeDirectories != null) {
           includeDirectoriesPaths = Arrays.stream(includeDirectories).map(f -> {
             getLog().info("Including proto files from '" + protoPath +"'.");
             return Paths.get(f.toURI());
@@ -116,7 +116,7 @@ public class CompileMojo extends AbstractMojo {
         project.addCompileSourceRoot(scalaOutPath.toString());
 
         Path javaOutPath = null;
-        if(javaOutput) {
+        if (javaOutput) {
           javaOutPath = Paths.get(javaOutputDirectory.toURI());
           getLog().info("Writing Java files in '" + javaOutPath +"'.");
           project.addCompileSourceRoot(javaOutPath.toString());
@@ -124,7 +124,7 @@ public class CompileMojo extends AbstractMojo {
 
         try {
           Files.createDirectories(scalaOutPath);
-          if(javaOutput && javaOutPath != null) {
+          if (javaOutput && javaOutPath != null) {
             Files.createDirectories(javaOutPath);
           }
         } catch (IOException ioe) {
