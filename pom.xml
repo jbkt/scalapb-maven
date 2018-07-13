@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.catte</groupId>
   <artifactId>scalapb-maven</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <packaging>pom</packaging>
   <name>ScalaPB Maven</name>
   <description>Maven plugin to compile Protobuf files in Scala using ScalaPB</description>
