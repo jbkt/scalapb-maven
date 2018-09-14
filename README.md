@@ -30,6 +30,7 @@ Add the following snippet to your pom.
 | `includeDirectories` | Additional include directories (array)     | `[]`                                                    |
 | `outputDirectory`    | Output directory for Scala files           | `${project.build.directory}/generated-sources/protobuf` |
 | `flatPackage`        | `true` to flatten packages                 | `false`                                                 |
+| `grpcOutput`         | `true` to generate GRPC sources            | `false`                                                 |
 
 For Java compatibility configuration, see the next section.
 
