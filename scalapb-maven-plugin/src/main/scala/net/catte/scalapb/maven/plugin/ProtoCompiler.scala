@@ -33,6 +33,7 @@ object ProtoCompiler {
               includeDirectoriesPaths: Array[Path],
               outputDirectoryPath: Path,
               flatPackage: Boolean,
+              grpcOutput: Boolean,
               javaConversions: Boolean,
               javaOutput: Boolean,
               javaOutputPath: Path): Unit = {
@@ -49,6 +50,9 @@ object ProtoCompiler {
     val scalaOutOptionsJoiner = new StringJoiner(",")
     if (flatPackage) {
       scalaOutOptionsJoiner.add("flat_package")
+    }
+    if (grpcOutput) {
+      scalaOutOptionsJoiner.add("grpc")
     }
     if (javaOutput && javaConversions) {
       scalaOutOptionsJoiner.add("java_conversions")

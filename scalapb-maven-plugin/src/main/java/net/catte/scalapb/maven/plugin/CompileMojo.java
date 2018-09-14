@@ -94,6 +94,9 @@ public class CompileMojo extends AbstractMojo {
     @Parameter(defaultValue = "${project.build.directory}/generated-sources/protobuf")
     private File javaOutputDirectory;
 
+    @Parameter(defaultValue = "false")
+    private boolean grpcOutput;
+
     public void execute() throws MojoExecutionException {
         if (skip) {
             getLog().info("Skip flag set, skipping protobuf compilation.");
@@ -138,6 +141,7 @@ public class CompileMojo extends AbstractMojo {
               includeDirectoriesPaths,
               scalaOutPath,
               flatPackage,
+              grpcOutput,
               javaConversions,
               javaOutput,
               javaOutPath
