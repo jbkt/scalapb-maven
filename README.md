@@ -22,15 +22,16 @@ Add the following snippet to your pom.
 
 ### Configuration
 
-| Maven property       | Description                                | Default                                                 |
-| :------------------- | :----------------------------------------- | :------------------------------------------------------ |
-| `skip`               | `true` to skip protobuf compilation        | `false`                                                 |
-| `protocVersion`      | Protoc binary version                      | `v300`                                                  |
-| `inputDirectory`     | Input directory containing `*.proto` files | `${project.basedir}/src/main/protobuf`                  |
-| `includeDirectories` | Additional include directories (array)     | `[]`                                                    |
-| `outputDirectory`    | Output directory for Scala files           | `${project.build.directory}/generated-sources/protobuf` |
-| `flatPackage`        | `true` to flatten packages                 | `false`                                                 |
-| `grpc`               | `true` to generate GRPC sources            | `false`                                                 |
+| Maven property       | Description                                        | Default                                                 |
+| :------------------- | :-----------------------------------------         | :------------------------------------------------------ |
+| `skip`               | `true` to skip protobuf compilation                | `false`                                                 |
+| `protocVersion`      | Protoc binary version                              | `v300`                                                  |
+| `inputDirectory`     | Input directory containing `*.proto` files         | `${project.basedir}/src/main/protobuf`                  |
+| `includeDirectories` | Additional include directories (array)             | `[]`                                                    |
+| `addProtoSources`    | `true` to add proto files (`*.proto`) as resources | `false`                                                 |
+| `outputDirectory`    | Output directory for Scala files                   | `${project.build.directory}/generated-sources/protobuf` |
+| `flatPackage`        | `true` to flatten packages                         | `false`                                                 |
+| `grpc`               | `true` to generate GRPC sources                    | `false`                                                 |
 
 For Java compatibility configuration, see the next section.
 

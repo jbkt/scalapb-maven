@@ -15,6 +15,9 @@
         <groupId>net.catte</groupId>
         <artifactId>scalapb-maven-plugin</artifactId>
         <version>${project.version}</version>
+        <configuration>
+          <addProtoSources>true</addProtoSources>
+        </configuration>
         <executions>
           <execution>
             <goals>

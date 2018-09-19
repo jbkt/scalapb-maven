@@ -3,9 +3,11 @@ package net.catte.scalapb.maven.plugin;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
+import org.apache.maven.project.MavenProjectHelper;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,12 +15,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Collections;
 
 @Mojo(name = "compile")
 public class CompileMojo extends AbstractMojo {
 
     @Parameter(defaultValue = "${project}")
     private MavenProject project;
+
+    @Component
+    private MavenProjectHelper projectHelper;
 
     @Parameter(defaultValue = "false")
     private boolean skip;
@@ -48,6 +54,15 @@ public class CompileMojo extends AbstractMojo {
      */
     @Parameter
     private File[] includeDirectories;
+
+    /**
+     * Add proto sources as resources.
+     * Defaults to <code>false</code>.
+     *
+     * @parameter property="addProtoSources"
+     */
+    @Parameter(defaultValue = "false")
+    private boolean addProtoSources;
 
     /**
      * Output directory for Scala generated classes.
@@ -117,6 +132,15 @@ public class CompileMojo extends AbstractMojo {
         Path scalaOutPath = Paths.get(outputDirectory.toURI());
         getLog().info("Writing Scala files in '" + scalaOutPath +"'.");
         project.addCompileSourceRoot(scalaOutPath.toString());
+
+        if (addProtoSources) {
+          projectHelper.addResource(
+            project,
+            inputDirectory.getAbsolutePath(),
+            Collections.singletonList("**/*.proto"),
+            Collections.emptyList()
+          );
+        }
 
         Path javaOutPath = null;
         if (javaOutput) {
