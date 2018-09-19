@@ -9,6 +9,7 @@
   <description>Maven plugin to compile Protobuf files in Scala using ScalaPB</description>
   <modules>
     <module>scalapb-maven-example</module>
+    <module>scalapb-maven-example-grpc</module>
     <module>scalapb-maven-example-java</module>
     <module>scalapb-maven-plugin</module>
   </modules>
