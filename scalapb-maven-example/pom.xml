@@ -9,8 +9,40 @@
   <artifactId>scalapb-maven-example</artifactId>
   <packaging>jar</packaging>
   <name>ScalaPB Maven Plugin Example</name>
+  <properties>
+    <scalapb.version>0.7.4</scalapb.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.thesamet.scalapb</groupId>
+      <artifactId>scalapb-runtime_${scala.version.short}</artifactId>
+      <version>${scalapb.version}</version>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>scala-compile-first</id>
+            <goals>
+              <goal>add-source</goal>
+              <goal>compile</goal>
+            </goals>
+            <phase>process-resources</phase>
+          </execution>
+          <execution>
+            <id>scala-test-compile</id>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+            <phase>process-test-resources</phase>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>net.catte</groupId>
         <artifactId>scalapb-maven-plugin</artifactId>
