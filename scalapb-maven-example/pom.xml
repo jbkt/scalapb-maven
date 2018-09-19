@@ -10,19 +10,12 @@
   <packaging>jar</packaging>
   <name>ScalaPB Maven Plugin Example</name>
   <properties>
-    <scala.major.minor.version>2.11</scala.major.minor.version>
-    <scala.version>2.11.8</scala.version>
     <scalapb.version>0.7.4</scalapb.version>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
-    </dependency>
-    <dependency>
       <groupId>com.thesamet.scalapb</groupId>
-      <artifactId>scalapb-runtime_${scala.major.minor.version}</artifactId>
+      <artifactId>scalapb-runtime_${scala.version.short}</artifactId>
       <version>${scalapb.version}</version>
     </dependency>
   </dependencies>
