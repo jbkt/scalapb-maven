@@ -71,7 +71,7 @@
         <artifactId>scalapb-maven-plugin</artifactId>
         <version>${project.version}</version>
         <configuration>
-          <grpcOutput>true</grpcOutput>
+          <grpc>true</grpc>
         </configuration>
         <executions>
           <execution>

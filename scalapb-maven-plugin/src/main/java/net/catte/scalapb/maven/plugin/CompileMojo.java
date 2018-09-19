@@ -95,7 +95,7 @@ public class CompileMojo extends AbstractMojo {
     private File javaOutputDirectory;
 
     @Parameter(defaultValue = "false")
-    private boolean grpcOutput;
+    private boolean grpc;
 
     public void execute() throws MojoExecutionException {
         if (skip) {
@@ -140,8 +140,7 @@ public class CompileMojo extends AbstractMojo {
               protoPath,
               includeDirectoriesPaths,
               scalaOutPath,
-              flatPackage,
-              grpcOutput,
+              flatPackage, grpc,
               javaConversions,
               javaOutput,
               javaOutPath
