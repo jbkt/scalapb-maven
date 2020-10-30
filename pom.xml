@@ -17,8 +17,8 @@
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <scala.version>2.11.12</scala.version>
-    <scala.version.short>2.11</scala.version.short>
+    <scala.version>2.12.10</scala.version>
+    <scala.version.short>2.12</scala.version.short>
   </properties>
   <dependencyManagement>
     <dependencies>
