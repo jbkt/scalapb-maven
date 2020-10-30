@@ -11,9 +11,9 @@
   <name>ScalaPB Maven Plugin Example With GRPC output</name>
   <properties>
     <grpc.version>1.14.0</grpc.version>
-    <scala.major.minor.version>2.11</scala.major.minor.version>
-    <scala.version>2.11.8</scala.version>
-    <scalapb.version>0.7.4</scalapb.version>
+    <scala.major.minor.version>2.12</scala.major.minor.version>
+    <scala.version>2.12.10</scala.version>
+    <scalapb.version>0.10.8</scalapb.version>
   </properties>
   <dependencies>
     <dependency>
